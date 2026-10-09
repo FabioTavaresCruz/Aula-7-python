@@ -85,10 +85,42 @@ def urgentes():
     if lista["prioridade"] == critica and lista["status"] == status:
       print (lista)
 
+def abrir():
+  iden = input("Qual é o id?: ")
+  Titulo = input("Qual é a situação?: ")
+  Prioridade = input("Qual é a prioridade?: ")
+  Status = input("Qual é o status?: ")
+  Usuario = input("Qual é o usuario?: ")
+
+  nova_chamada = {
+    "id":iden,
+    "titulo":Titulo,
+    "prioridade":Prioridade,
+    "status":Status,
+    "usuario":Usuario
+
+  }
+
+  chamados.append(nova_chamada)
+
+def resolver():
+  r = input("Qual usuario deseja resolver?: ")
+  for chamada in chamados:
+    if chamada["usuario"] == r:
+        chamada["status"] = "Em progresso"
+        break
+
+def fechar():
+  f = input("Qual usuario deseja fechar?: ")
+  for chamada in chamados:
+      if chamada["usuario"] == f:
+          chamada["status"] = "Fechado"
+          break
+
 while True: 
 
  print ("1 - Pesquisar Usuário")
- print ("2 - pesquisar Prioridades")
+ print ("2 - Pesquisar Prioridades")
  print ("3 - Pesquisar Status")
  print ("4 - Chamadas Urgentes")
  print ("5 - Abrir Nova Chamada")
