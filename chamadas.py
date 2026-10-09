@@ -86,7 +86,7 @@ def urgentes():
       print (lista)
 
 def abrir():
-  iden = input("Qual é o id?: ")
+  iden = len(chamados) + 1
   Titulo = input("Qual é a situação?: ")
   Prioridade = input("Qual é a prioridade?: ")
   Status = input("Qual é o status?: ")
